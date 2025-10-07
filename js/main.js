@@ -17,7 +17,7 @@ const on = (el, ev, fn) => el && el.addEventListener(ev, fn)
 ;(() => {
   const btn = document.querySelector('.theme-toggle')
   if (!btn) return
-  const KEY = 'medidesh_theme'
+  const KEY = 'Medidesh_theme'
   const sysPref = () => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   const apply = (mode) => {
     const html = document.documentElement
@@ -71,7 +71,7 @@ const on = (el, ev, fn) => el && el.addEventListener(ev, fn)
       cells[2].textContent = `৳${val('premium') || 2500}/mo`
     }
   }
-  window.MediDeshPricing = { set: setPrice, bulkSet: map => Object.entries(map || {}).forEach(([k, v]) => setPrice(k, v)) }
+  window.MedideshPricing = { set: setPrice, bulkSet: map => Object.entries(map || {}).forEach(([k, v]) => setPrice(k, v)) }
   const y = $('#year'); if (y) y.textContent = new Date().getFullYear()
 })()
 

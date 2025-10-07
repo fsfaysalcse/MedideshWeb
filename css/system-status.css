@@ -1,0 +1,768 @@
+.status-hero {
+  padding: 4rem 0 3rem;
+  background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+  text-align: center;
+}
+
+.status-hero .hero-title {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.overall-status {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.status-indicator.operational {
+  border-color: var(--success);
+}
+
+.status-indicator.degraded {
+  border-color: var(--warning);
+}
+
+.status-indicator.outage {
+  border-color: var(--error);
+}
+
+.status-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.status-indicator.operational .status-icon {
+  background-color: var(--success);
+}
+
+.status-indicator.degraded .status-icon {
+  background-color: var(--warning);
+}
+
+.status-indicator.outage .status-icon {
+  background-color: var(--error);
+}
+
+.status-icon svg {
+  width: 2rem;
+  height: 2rem;
+  color: var(--white);
+}
+
+.status-text {
+  text-align: left;
+  flex: 1;
+}
+
+.status-text h2 {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.status-text p {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+}
+
+.current-status {
+  padding: 4rem 0;
+  background-color: var(--white);
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: var(--gray-50);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--gray-200);
+  transition: var(--transition);
+}
+
+.service-item:hover {
+  border-color: var(--primary-200);
+  box-shadow: var(--shadow);
+}
+
+.service-info h3 {
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.service-info p {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.service-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.status-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.service-status.operational .status-dot {
+  background-color: var(--success);
+}
+
+.service-status.operational .status-label {
+  color: var(--success);
+}
+
+.service-status.degraded .status-dot {
+  background-color: var(--warning);
+}
+
+.service-status.degraded .status-label {
+  color: var(--warning);
+}
+
+.service-status.outage .status-dot {
+  background-color: var(--error);
+}
+
+.service-status.outage .status-label {
+  color: var(--error);
+}
+
+.uptime-section {
+  padding: 4rem 0;
+  background-color: var(--gray-50);
+}
+
+.uptime-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0 3rem;
+}
+
+.uptime-stat {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.stat-value {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-500);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.uptime-chart {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.uptime-chart h3 {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 1.5rem;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10px, 1fr));
+  gap: 3px;
+  margin-bottom: 1.5rem;
+}
+
+.chart-day {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.chart-day.excellent {
+  background-color: #10b981;
+}
+
+.chart-day.good {
+  background-color: #84cc16;
+}
+
+.chart-day.degraded {
+  background-color: #f59e0b;
+}
+
+.chart-day.down {
+  background-color: #ef4444;
+}
+
+.chart-day:hover {
+  transform: scale(1.2);
+  box-shadow: var(--shadow);
+}
+
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.legend-color {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 2px;
+}
+
+.legend-color.excellent {
+  background-color: #10b981;
+}
+
+.legend-color.good {
+  background-color: #84cc16;
+}
+
+.legend-color.degraded {
+  background-color: #f59e0b;
+}
+
+.legend-color.down {
+  background-color: #ef4444;
+}
+
+.incidents-section {
+  padding: 4rem 0;
+  background-color: var(--white);
+}
+
+.incidents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.incident-item {
+  background-color: var(--gray-50);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.incident-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.incident-status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status-badge {
+  padding: 0.375rem 0.875rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-badge.resolved {
+  background-color: var(--success);
+  color: var(--white);
+}
+
+.status-badge.investigating {
+  background-color: var(--warning);
+  color: var(--white);
+}
+
+.status-badge.identified {
+  background-color: var(--info);
+  color: var(--white);
+}
+
+.incident-status h3 {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.incident-date {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+}
+
+.incident-description {
+  color: var(--gray-700);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.incident-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--gray-300);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 80px auto;
+  gap: 1rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.375rem;
+  top: 0.5rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--white);
+  border: 2px solid var(--gray-400);
+  border-radius: 50%;
+}
+
+.timeline-time {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.timeline-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.timeline-status.resolved {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+.timeline-status.investigating {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+}
+
+.timeline-status.identified {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--info);
+}
+
+.timeline-status.maintenance {
+  background-color: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.timeline-item p {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  grid-column: 2;
+}
+
+.no-incidents {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: var(--gray-50);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.no-incidents svg {
+  width: 4rem;
+  height: 4rem;
+  color: var(--success);
+  margin-bottom: 1rem;
+}
+
+.no-incidents h3 {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.no-incidents p {
+  color: var(--gray-600);
+}
+
+.subscribe-section {
+  padding: 4rem 0;
+  background-color: var(--gray-50);
+}
+
+.subscribe-card {
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  border-radius: var(--border-radius-xl);
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  color: var(--white);
+}
+
+.subscribe-content h2 {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subscribe-content p {
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--border-radius);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+.subscribe-form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.subscribe-form input:focus {
+  outline: none;
+  border-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.subscribe-form button {
+  padding: 0.875rem 1.75rem;
+  background-color: var(--white);
+  color: var(--primary-500);
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.subscribe-form button:hover {
+  background-color: var(--gray-100);
+  transform: translateY(-1px);
+}
+
+.metrics-section {
+  padding: 4rem 0;
+  background-color: var(--white);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.metric-card {
+  background-color: var(--gray-50);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--gray-200);
+  transition: var(--transition);
+}
+
+.metric-card:hover {
+  border-color: var(--primary-200);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.metric-header h3 {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.metric-trend {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+}
+
+.metric-trend.up {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+.metric-trend.down {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+}
+
+.metric-trend svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.metric-value {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-500);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.metric-chart {
+  height: 60px;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+}
+
+.mini-chart {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2px;
+}
+
+.mini-chart .bar {
+  flex: 1;
+  background: linear-gradient(to top, var(--primary-500), var(--primary-300));
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.mini-chart .bar:hover {
+  background: linear-gradient(to top, var(--primary-600), var(--primary-400));
+}
+
+@media (max-width: 1024px) {
+  .uptime-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .status-hero {
+    padding: 3rem 0 2rem;
+  }
+
+  .status-hero .hero-title {
+    font-size: 2rem;
+  }
+
+  .status-indicator {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .status-text {
+    text-align: center;
+  }
+
+  .service-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .uptime-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-grid {
+    grid-template-columns: repeat(auto-fill, minmax(8px, 1fr));
+    gap: 2px;
+  }
+
+  .chart-legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .subscribe-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2.5rem 2rem;
+  }
+
+  .subscribe-form {
+    max-width: 100%;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item p {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .status-hero {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .status-hero .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .status-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .status-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .status-text h2 {
+    font-size: 1.25rem;
+  }
+
+  .service-item {
+    padding: 1.25rem;
+  }
+
+  .uptime-chart {
+    padding: 1.5rem;
+  }
+
+  .incident-item {
+    padding: 1.5rem;
+  }
+
+  .incident-header {
+    flex-direction: column;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+  }
+
+  .subscribe-form button {
+    width: 100%;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+}

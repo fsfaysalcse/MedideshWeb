@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Status - MediDesh</title>
+    <meta name="description"
+        content="Check the current status of MediDesh services and view our uptime history. Real-time monitoring of all systems.">
+    <link rel="icon" href="../assets/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/site.css">
+    <link rel="stylesheet" href="../css/system-status.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a class="brand" href="../index.html">
+                    <img src="../assets/logo1.png" alt="MediDesh logo" class="logo">
+                    <span class="brand-name">MediDesh</span>
+                </a>
+                <nav class="nav" id="navigation">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../index.html#features" class="nav-link">Features</a>
+                    <a href="../index.html#pricing" class="nav-link">Pricing</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <div class="dropdown">
+                        <a href="#" class="nav-link">More</a>
+                        <div class="dropdown-content">
+                            <a href="careers.html">Careers</a>
+                            <a href="blog.html">Blog</a>
+                            <a href="help-center.html">Help Center</a>
+                            <a href="documentation.html">Documentation</a>
+                            <a href="tutorials.html">Tutorials</a>
+                            <a href="system-status.html">System Status</a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="header-actions">
+                    <button class="lang-toggle" aria-label="Toggle language">
+                        <span class="lang-option active">EN</span>
+                        <span class="lang-option">বাংলা</span>
+                    </button>
+                    <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="status-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">System Status</h1>
+                    <div class="overall-status">
+                        <div class="status-indicator operational">
+                            <div class="status-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                </svg>
+                            </div>
+                            <div class="status-text">
+                                <h2>All Systems Operational</h2>
+                                <p>Last updated: <span id="lastUpdated">October 8, 2025 at 2:45 PM BDT</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="current-status">
+            <div class="container">
+                <h2 class="section-title">Current Status</h2>
+                <div class="services-list">
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Web Application</h3>
+                            <p>Main MediDesh web dashboard and portal</p>
+                        </div>
+                        <div class="service-status operational">
+                            <span class="status-dot"></span>
+                            <span class="status-label">Operational</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>API Services</h3>
+                            <p>Backend API for all integrations</p>
+                        </div>
+                        <div class="service-status operational">
+                            <span class="status-dot"></span>
+                            <span class="status-label">Operational</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Mobile Apps</h3>
+                            <p>Android and iOS applications</p>
+                        </div>
+                        <div class="service-status operational">
+                            <span class="status-dot"></span>
+                            <span class="status-label">Operational</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Desktop Application</h3>
+                            <p>Windows desktop software</p>
+                        </div>
+                        <div class="service-status operational">
+                            <span class="status-dot"></span>
+                            <span class="status-label">Operational</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Database Services</h3>
+                            <p>Data storage and retrieval systems</p>
+                        </div>
+                        <div class="service-status operational">
+                            <span class="status-dot"></span>
+                            <span class="status-label">Operational</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Authentication</h3>
+                            <p>User login and security services</p>
+                        </div>
+                        <div class="service-status operational">
+                            <span class="status-dot"></span>
+                            <span class="status-label">Operational</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Payment Gateway</h3>
+                            <p>Payment processing and billing</p>
+                        </div>
+                        <div class="service-status operational">
+                            <span class="status-dot"></span>
+                            <span class="status-label">Operational</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Notifications</h3>
+                            <p>Email and push notification system</p>
+                        </div>
+                        <div class="service-status operational">
+                            <span class="status-dot"></span>
+                            <span class="status-label">Operational</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Backup Systems</h3>
+                            <p>Data backup and recovery services</p>
+                        </div>
+                        <div class="service-status operational">
+                            <span class="status-dot"></span>
+                            <span class="status-label">Operational</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="uptime-section">
+            <div class="container">
+                <h2 class="section-title">Uptime History</h2>
+                <p class="section-subtitle">Last 90 days</p>
+
+                <div class="uptime-stats">
+                    <div class="uptime-stat">
+                        <div class="stat-value">99.98%</div>
+                        <div class="stat-label">Overall Uptime</div>
+                    </div>
+                    <div class="uptime-stat">
+                        <div class="stat-value">8ms</div>
+                        <div class="stat-label">Avg Response Time</div>
+                    </div>
+                    <div class="uptime-stat">
+                        <div class="stat-value">0</div>
+                        <div class="stat-label">Major Incidents</div>
+                    </div>
+                    <div class="uptime-stat">
+                        <div class="stat-value">2</div>
+                        <div class="stat-label">Minor Incidents</div>
+                    </div>
+                </div>
+
+                <div class="uptime-chart">
+                    <h3>Daily Uptime</h3>
+                    <div class="chart-container">
+                        <div class="chart-grid" id="uptimeChart">
+                            <!-- Generated by JavaScript -->
+                        </div>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-color excellent"></span>
+                                <span>99-100% uptime</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color good"></span>
+                                <span>95-99% uptime</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color degraded"></span>
+                                <span>90-95% uptime</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color down"></span>
+                                <span>Below 90%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="incidents-section">
+            <div class="container">
+                <h2 class="section-title">Recent Incidents</h2>
+                <div class="incidents-list">
+                    <div class="incident-item resolved">
+                        <div class="incident-header">
+                            <div class="incident-status">
+                                <span class="status-badge resolved">Resolved</span>
+                                <h3>Minor API Latency</h3>
+                            </div>
+                            <span class="incident-date">October 5, 2025</span>
+                        </div>
+                        <p class="incident-description">We experienced increased API response times between 2:30 PM and
+                            3:15 PM BDT. The issue has been identified and resolved.</p>
+                        <div class="incident-timeline">
+                            <div class="timeline-item">
+                                <span class="timeline-time">3:15 PM</span>
+                                <span class="timeline-status resolved">Resolved</span>
+                                <p>All systems are operating normally. Response times have returned to baseline.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-time">2:45 PM</span>
+                                <span class="timeline-status investigating">Investigating</span>
+                                <p>Our team is investigating reports of slower API response times.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-time">2:30 PM</span>
+                                <span class="timeline-status identified">Identified</span>
+                                <p>We have identified increased latency affecting API services.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="incident-item resolved">
+                        <div class="incident-header">
+                            <div class="incident-status">
+                                <span class="status-badge resolved">Resolved</span>
+                                <h3>Scheduled Maintenance</h3>
+                            </div>
+                            <span class="incident-date">September 28, 2025</span>
+                        </div>
+                        <p class="incident-description">Planned maintenance window from 2:00 AM to 4:00 AM BDT for
+                            database upgrades. All services were restored ahead of schedule.</p>
+                        <div class="incident-timeline">
+                            <div class="timeline-item">
+                                <span class="timeline-time">3:45 AM</span>
+                                <span class="timeline-status resolved">Completed</span>
+                                <p>Maintenance completed successfully. All systems operational.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-time">2:00 AM</span>
+                                <span class="timeline-status maintenance">Started</span>
+                                <p>Scheduled maintenance window began as planned.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="no-incidents">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg>
+                        <h3>No other incidents in the past 90 days</h3>
+                        <p>Our systems have been running smoothly with minimal disruptions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="subscribe-section">
+            <div class="container">
+                <div class="subscribe-card">
+                    <div class="subscribe-content">
+                        <h2>Subscribe to Status Updates</h2>
+                        <p>Get notified via email when we post updates or experience incidents</p>
+                    </div>
+                    <form class="subscribe-form" id="subscribeForm">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="metrics-section">
+            <div class="container">
+                <h2 class="section-title">Performance Metrics</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3>API Response Time</h3>
+                            <span class="metric-trend up">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 14l5-5 5 5z" />
+                                </svg>
+                                2% faster
+                            </span>
+                        </div>
+                        <div class="metric-value">8ms</div>
+                        <div class="metric-chart">
+                            <div class="mini-chart" data-values="6,7,8,7,8,9,8"></div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3>Database Query Time</h3>
+                            <span class="metric-trend up">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 14l5-5 5 5z" />
+                                </svg>
+                                5% faster
+                            </span>
+                        </div>
+                        <div class="metric-value">12ms</div>
+                        <div class="metric-chart">
+                            <div class="mini-chart" data-values="15,14,13,12,13,12,12"></div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3>Page Load Time</h3>
+                            <span class="metric-trend up">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 14l5-5 5 5z" />
+                                </svg>
+                                3% faster
+                            </span>
+                        </div>
+                        <div class="metric-value">1.2s</div>
+                        <div class="metric-chart">
+                            <div class="mini-chart" data-values="1.4,1.3,1.2,1.3,1.2,1.2,1.2"></div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3>Active Users</h3>
+                            <span class="metric-trend up">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 14l5-5 5 5z" />
+                                </svg>
+                                12% increase
+                            </span>
+                        </div>
+                        <div class="metric-value">2,847</div>
+                        <div class="metric-chart">
+                            <div class="mini-chart" data-values="2400,2500,2600,2700,2750,2800,2847"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a class="brand" href="index.html">
+                        <img src="../assets/logo1.png" alt="Medidesh logo" class="logo">
+                        <span class="brand-name">Medidesh</span>
+                    </a>
+                    <p class="footer-description">Smart POS & inventory solutions for modern Bangladeshi pharmacies.
+                        Transform
+                        your business with intelligent technology.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column"></div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">Company</h4>
+                        <ul class="footer-list">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">Support</h4>
+                        <ul class="footer-list">
+                            <li><a href="help.html">Help Center</a></li>
+                           
+                            <li><a href="tutorials.html">Tutorials</a></li>
+                            <li><a href="status.html">System Status</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">Legal</h4>
+                        <ul class="footer-list">
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="gdpr.html">GDPR</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="footer-copyright">© 2024 Medidesh. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="pages/privacy.html">Privacy</a>
+                        <a href="pages/terms.html">Terms</a>
+                        <a href="pages/cookies.html">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/system-status.js"></script>
+</body>
+
+</html>
