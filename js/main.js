@@ -127,3 +127,13 @@ const on = (el, ev, fn) => el && el.addEventListener(ev, fn)
     updateArrows()
   })
 })()
+
+;(() => {
+  const dropdownLink = document.querySelector('.nav-link + .dropdown > a');
+  if (dropdownLink) {
+    // Prevent navigation when the "More" link is clicked
+    dropdownLink.addEventListener('click', (e) => {
+      e.preventDefault();
+    });
+  }
+})();
