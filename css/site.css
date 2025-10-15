@@ -51,10 +51,6 @@
   --font-secondary: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* ======================
-   BASE STYLES
-   ====================== */
-
 * {
   margin: 0;
   padding: 0;
@@ -81,6 +77,12 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
 }
 
 img {
@@ -112,93 +114,107 @@ select {
   font-family: inherit;
 }
 
-/* ======================
-   UTILITY CLASSES
-   ====================== */
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-}
-
-/* Section Padding Utility */
-.section-padding {
-  padding: 5rem 0;
-}
-
-/* Apply section padding to all major sections */
-.features-section,
-.platforms-section,
-.showcase-section,
-.testimonials-section,
-.pricing-section,
-.contact-section,
-.cta-section {
-  padding: 5rem 0;
-}
-
-/* Card Base Styles */
-.card {
-  background-color: var(--white);
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--gray-200);
-  transition: var(--transition-slow);
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
   position: relative;
   overflow: hidden;
 }
 
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary-200);
-}
-
-.card-hover-lg:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
-}
-
-/* Gradient Overlay */
-.card-gradient::before {
+.btn::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--primary-50), transparent);
-  opacity: 0;
-  transition: var(--transition-slow);
-  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
 }
 
-.card-gradient:hover::before {
-  opacity: 1;
+.btn:hover::before {
+  left: 100%;
 }
 
-/* Icon Container */
-.icon-container {
-  background-color: var(--primary-50);
-  border-radius: var(--border-radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-  position: relative;
-  z-index: 1;
+.btn svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
 }
 
-.icon-container svg {
+.btn-primary {
+  background-color: var(--primary-500);
+  color: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-600);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+  background-color: var(--white);
   color: var(--primary-500);
+  border: 1px solid var(--primary-500);
 }
 
-.card:hover .icon-container {
-  background-color: var(--primary-100);
-  transform: scale(1.1);
+.btn-secondary:hover {
+  background-color: var(--primary-500);
+  color: var(--white);
+  transform: translateY(-1px);
 }
 
-/* Section Headers */
+.btn-outline {
+  background-color: transparent;
+  color: var(--gray-700);
+  border: 1px solid var(--gray-300);
+}
+
+.btn-outline:hover {
+  background-color: var(--gray-100);
+  border-color: var(--gray-400);
+  transform: translateY(-1px);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
 .section-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -221,188 +237,6 @@ select {
   margin: 0 auto;
   line-height: 1.6;
 }
-
-/* Grid Utilities */
-.grid-auto-fit {
-  display: grid;
-  gap: 2rem;
-}
-
-.grid-auto-fit-sm {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.grid-auto-fit-md {
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-}
-
-/* Button Hover Effect */
-.btn-hover-lift:hover {
-  transform: translateY(-1px);
-}
-
-.btn-hover-lift:active {
-  transform: translateY(0);
-}
-
-/* Checkmark List */
-.checkmark-list {
-  list-style: none;
-  padding: 0;
-}
-
-.checkmark-list li {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem 0;
-  color: var(--gray-600);
-  transition: var(--transition);
-}
-
-.checkmark-list li::before {
-  content: "✓";
-  color: var(--primary-500);
-  font-weight: 600;
-  flex-shrink: 0;
-  width: 1rem;
-  height: 1rem;
-  background-color: var(--primary-50);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-}
-
-/* Animation Utilities */
-.fade-in {
-  opacity: 0;
-  transform: translateY(2rem);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 0.8s ease-out;
-}
-
-/* Shimmer Effect */
-.shimmer-effect::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.6s ease;
-}
-
-.shimmer-effect:hover::before {
-  left: 100%;
-}
-
-/* ======================
-   BUTTONS
-   ====================== */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
-  border: none;
-  border-radius: var(--border-radius);
-  font-family: var(--font-secondary);
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: var(--transition);
-  white-space: nowrap;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn svg {
-  width: 1rem;
-  height: 1rem;
-  flex-shrink: 0;
-}
-
-.btn-primary {
-  background-color: var(--primary-500);
-  color: var(--white);
-  box-shadow: var(--shadow);
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-600);
-  box-shadow: var(--shadow-lg);
-}
-
-.btn-secondary {
-  background-color: var(--white);
-  color: var(--primary-500);
-  border: 1px solid var(--primary-500);
-}
-
-.btn-secondary:hover {
-  background-color: var(--primary-500);
-  color: var(--white);
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: var(--gray-700);
-  border: 1px solid var(--gray-300);
-}
-
-.btn-outline:hover {
-  background-color: var(--gray-100);
-  border-color: var(--gray-400);
-}
-
-.btn-large {
-  padding: 1rem 2rem;
-  font-size: 1rem;
-}
-
-.btn-full {
-  width: 100%;
-}
-
-.btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none !important;
-}
-
-/* ======================
-   HEADER
-   ====================== */
 
 .header {
   position: fixed;
@@ -497,31 +331,31 @@ select {
 }
 
 .nav-link + .dropdown > a {
-  padding-right: 20px;
-  cursor: pointer;
+  padding-right: 20px; 
+  cursor: pointer; /* Ensure it looks clickable even though it won't navigate */
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 100%;  
   left: 0;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);  
   min-width: 160px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, visibility 0s 0.3s, transform 0.3s ease;
+  opacity: 0; 
+  visibility: hidden; 
+  transform: translateY(10px); 
+  transition: opacity 0.3s ease, visibility 0s 0.3s, transform 0.3s ease; 
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
-  opacity: 1;
-  visibility: visible;
+  opacity: 1; 
+  visibility: visible; 
   transform: translateY(0);
-  transition: opacity 0.3s ease, visibility 0s 0s, transform 0.99s ease;
+  transition: opacity 0.3s ease, visibility 0s 0s, transform 0.99s ease; 
 }
 
 .dropdown-content a {
@@ -536,9 +370,11 @@ select {
   background-color: var(--primary-100);
 }
 
+/* Optionally style the 'More' link to show it is interactive */
 .nav-link.dropdown-link {
   cursor: pointer;
 }
+
 
 .theme-toggle,
 .menu-toggle {
@@ -589,10 +425,6 @@ select {
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* ======================
-   ANNOUNCEMENT BAR
-   ====================== */
-
 .announcement-bar {
   background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
   color: var(--white);
@@ -614,15 +446,6 @@ select {
   }
 }
 
-@keyframes shimmer {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
 .announcement-bar::before {
   content: "";
   position: absolute;
@@ -637,6 +460,15 @@ select {
     transparent
   );
   animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 .announcement-content {
@@ -667,10 +499,6 @@ select {
 .announcement-close:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-
-/* ======================
-   HERO SECTION
-   ====================== */
 
 .hero {
   padding: 5rem 0;
@@ -715,6 +543,17 @@ select {
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
   animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-subtitle {
@@ -772,10 +611,6 @@ select {
   height: 0.875rem;
 }
 
-/* ======================
-   STATS SECTION
-   ====================== */
-
 .stats-section {
   padding: 3rem 0;
   background-color: var(--gray-50);
@@ -788,9 +623,15 @@ select {
 }
 
 .stat-card {
+  background-color: var(--white);
   padding: 1.5rem;
+  border-radius: var(--border-radius-lg);
   text-align: center;
   box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: 1px solid var(--gray-200);
+  position: relative;
+  overflow: hidden;
 }
 
 .stat-card::before {
@@ -824,11 +665,8 @@ select {
   font-weight: 500;
 }
 
-/* ======================
-   FEATURES SECTION
-   ====================== */
-
 .features-section {
+  padding: 5rem 0;
   background-color: var(--white);
 }
 
@@ -839,18 +677,60 @@ select {
 }
 
 .feature-card {
+  background-color: var(--white);
   padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--gray-200);
+  transition: var(--transition-slow);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-50), transparent);
+  opacity: 0;
+  transition: var(--transition-slow);
+}
+
+.feature-card:hover {
+  border-color: var(--primary-200);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
 }
 
 .feature-icon {
   width: 3rem;
   height: 3rem;
+  background-color: var(--primary-50);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  transition: var(--transition);
+}
+
+.feature-card:hover .feature-icon {
+  background-color: var(--primary-100);
+  transform: scale(1.1);
 }
 
 .feature-icon svg {
   width: 1.5rem;
   height: 1.5rem;
+  color: var(--primary-500);
 }
 
 .feature-title {
@@ -870,11 +750,8 @@ select {
   z-index: 1;
 }
 
-/* ======================
-   PLATFORMS SECTION
-   ====================== */
-
 .platforms-section {
+  padding: 5rem 0;
   background-color: var(--gray-50);
 }
 
@@ -885,19 +762,60 @@ select {
 }
 
 .platform-card {
+  background-color: var(--white);
   padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--gray-200);
+  transition: var(--transition-slow);
+  position: relative;
+  overflow: hidden;
+}
+
+.platform-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-50), transparent);
+  opacity: 0;
+  transition: var(--transition-slow);
+}
+
+.platform-card:hover {
+  border-color: var(--primary-200);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-8px);
+}
+
+.platform-card:hover::before {
+  opacity: 1;
 }
 
 .platform-icon {
   width: 4rem;
   height: 4rem;
+  background-color: var(--primary-50);
   border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  transition: var(--transition);
+}
+
+.platform-card:hover .platform-icon {
+  background-color: var(--primary-100);
+  transform: scale(1.1);
 }
 
 .platform-icon svg {
   width: 2rem;
   height: 2rem;
+  color: var(--primary-500);
 }
 
 .platform-title {
@@ -919,20 +837,39 @@ select {
 }
 
 .platform-features {
+  list-style: none;
+  padding: 0;
   position: relative;
   z-index: 1;
 }
 
 .platform-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--gray-600);
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
+  transition: var(--transition);
 }
 
-/* ======================
-   SHOWCASE SECTION
-   ====================== */
+.platform-features li::before {
+  content: "✓";
+  color: var(--primary-500);
+  font-weight: 600;
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-50);
+  border-radius: 50%;
+  font-size: 0.7rem;
+}
 
 .showcase-section {
+  padding: 5rem 0;
   background-color: var(--white);
 }
 
@@ -943,8 +880,12 @@ select {
 }
 
 .showcase-card {
+  background-color: var(--white);
   border-radius: var(--border-radius-xl);
+  overflow: hidden;
   box-shadow: var(--shadow-md);
+  transition: var(--transition-slow);
+  border: 1px solid var(--gray-200);
 }
 
 .showcase-card:hover {
@@ -963,10 +904,11 @@ select {
 .showcase-image img {
   width: 100%;
   height: 100%;
-  object-position: center;
+  object-position: center; 
   object-fit: contain;
   transition: var(--transition-slow);
 }
+
 
 .showcase-card:hover .showcase-image img {
   transform: scale(1.05);
@@ -988,11 +930,6 @@ select {
   color: var(--gray-600);
   line-height: 1.6;
 }
-
-/* ======================
-   PARTNERS SECTION
-   ====================== */
-
 .partners-section {
   padding: 4rem 0;
   background-color: var(--gray-50);
@@ -1029,30 +966,28 @@ select {
   border-color: var(--primary-200);
 }
 
+/* Brand-colored backgrounds */
 .partner-logo.square {
-  background-color: #009688;
+  background-color: #009688; /* Square Pharma teal */
 }
 .partner-logo.beximco {
-  background-color: #aaaaaa;
+  background-color: #aaaaaa; /* Beximco blue */
 }
 .partner-logo.renata {
-  background-color: #1a73e8;
+  background-color: #1a73e8; /* Renata blue */
 }
 .partner-logo.aci {
-  background-color: #ffffff;
+  background-color: #ffffff; /* ACI green */
 }
 .partner-logo.healthcare {
-  background-color: #2d262e;
+  background-color: #2d262e; /* Healthcare purple */
 }
 .partner-logo.lazz {
-  background-color: #ffffff;
+  background-color: #ffffff; /* Lazz Pharma red */
 }
 
-/* ======================
-   TESTIMONIALS SECTION
-   ====================== */
-
 .testimonials-section {
+  padding: 5rem 0;
   background-color: var(--white);
 }
 
@@ -1065,6 +1000,10 @@ select {
 .testimonial-card {
   background-color: var(--gray-50);
   padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--gray-200);
+  transition: var(--transition-slow);
+  position: relative;
 }
 
 .testimonial-card::before {
@@ -1077,6 +1016,12 @@ select {
   height: 3px;
   background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
   border-radius: 0 0 3px 3px;
+}
+
+.testimonial-card:hover {
+  border-color: var(--primary-200);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
 }
 
 .testimonial-content {
@@ -1147,11 +1092,8 @@ select {
   color: var(--gray-600);
 }
 
-/* ======================
-   PRICING SECTION
-   ====================== */
-
 .pricing-section {
+  padding: 5rem 0;
   background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
   position: relative;
 }
@@ -1182,15 +1124,25 @@ select {
 }
 
 .pricing-card {
+  background-color: var(--white);
   border-radius: var(--border-radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow);
+  transition: var(--transition-slow);
+  position: relative;
+  border: 1px solid var(--gray-200);
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
 }
 
 .pricing-featured {
   border-color: var(--primary-500);
   box-shadow: var(--shadow-lg);
   transform: scale(1.05);
+  position: relative;
 }
 
 .pricing-featured::before {
@@ -1303,11 +1255,8 @@ select {
   z-index: 1;
 }
 
-/* ======================
-   CONTACT SECTION
-   ====================== */
-
 .contact-section {
+  padding: 5rem 0;
   background-color: var(--white);
 }
 
@@ -1343,12 +1292,24 @@ select {
 .contact-icon {
   width: 3rem;
   height: 3rem;
+  background-color: var(--primary-50);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.contact-item:hover .contact-icon {
+  background-color: var(--primary-100);
+  transform: scale(1.1);
 }
 
 .contact-icon svg {
   width: 1.25rem;
   height: 1.25rem;
+  color: var(--primary-500);
 }
 
 .contact-content h4 {
@@ -1422,11 +1383,8 @@ select {
   min-height: 100px;
 }
 
-/* ======================
-   CTA SECTION
-   ====================== */
-
 .cta-section {
+  padding: 5rem 0;
   background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
   color: var(--white);
   text-align: center;
@@ -1500,10 +1458,6 @@ select {
   border-color: var(--white);
   transform: translateY(-2px);
 }
-
-/* ======================
-   FOOTER
-   ====================== */
 
 .footer {
   background-color: var(--gray-900);
@@ -1635,10 +1589,6 @@ select {
   color: var(--primary-500);
 }
 
-/* ======================
-   SCROLL TO TOP
-   ====================== */
-
 .scroll-to-top {
   position: fixed;
   bottom: 2rem;
@@ -1673,10 +1623,6 @@ select {
   height: 1.25rem;
 }
 
-/* ======================
-   LOADING SPINNER
-   ====================== */
-
 .loading-spinner {
   display: inline-block;
   width: 1rem;
@@ -1693,9 +1639,16 @@ select {
   }
 }
 
-/* ======================
-   MOBILE NAVIGATION
-   ====================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .mobile-nav {
   position: fixed;
@@ -1775,46 +1728,6 @@ select {
   opacity: 1;
   visibility: visible;
 }
-
-/* ======================
-   LANGUAGE TOGGLE
-   ====================== */
-
-.lang-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-  background: linear-gradient(135deg, #4cafef, #0078d7);
-  border: none;
-  border-radius: 30px;
-  padding: 6px 14px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-
-.lang-toggle:hover {
-  background: linear-gradient(135deg, #0078d7, #005bb5);
-  transform: scale(1.05);
-}
-
-.lang-option {
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
-
-.lang-option.active {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-/* ======================
-   RESPONSIVE DESIGN
-   ====================== */
 
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -1948,80 +1861,6 @@ select {
     flex-wrap: wrap;
     justify-content: center;
   }
-
-  .nav.show {
-    display: flex !important;
-    position: fixed;
-    top: 73px;
-    right: 0;
-    width: 280px;
-    height: calc(100vh - 73px);
-    background-color: var(--white);
-    flex-direction: column;
-    padding: 2rem 0;
-    box-shadow: var(--shadow-xl);
-    overflow-y: auto;
-    z-index: 1000;
-  }
-
-  .dropdown {
-    width: 100%;
-    position: relative;
-  }
-
-  .dropdown > .nav-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    width: 100%;
-  }
-
-  .dropdown > .nav-link::after {
-    content: "▼";
-    font-size: 0.7rem;
-    margin-left: 0.5rem;
-    transition: transform 0.3s ease;
-  }
-
-  .dropdown.show > .nav-link::after {
-    transform: rotate(180deg);
-  }
-
-  .dropdown-content {
-    position: static !important;
-    width: 100%;
-    background-color: var(--gray-50);
-    box-shadow: none;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-    display: block !important;
-  }
-
-  .dropdown.show .dropdown-content {
-    max-height: 500px;
-  }
-
-  .dropdown-content a {
-    padding: 0.75rem 2.5rem !important;
-    border-bottom: 1px solid var(--gray-200);
-    display: block;
-    background-color: transparent !important;
-  }
-
-  .dropdown-content a:hover {
-    background-color: var(--primary-100) !important;
-  }
-
-  .nav-link {
-    padding: 1rem 2rem;
-    width: 100%;
-    display: block;
-  }
 }
 
 @media (max-width: 480px) {
@@ -2104,10 +1943,6 @@ select {
   }
 }
 
-/* ======================
-   PRINT STYLES
-   ====================== */
-
 @media print {
   .announcement-bar,
   .header,
@@ -2129,4 +1964,123 @@ select {
     background: var(--gray-100) !important;
     color: var(--gray-900) !important;
   }
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  background: linear-gradient(135deg, #4cafef, #0078d7);
+  border: none;
+  border-radius: 30px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.lang-toggle:hover {
+  background: linear-gradient(135deg, #0078d7, #005bb5);
+  transform: scale(1.05);
+}
+
+.lang-option {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.lang-option.active {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+
+
+@media (max-width: 768px) {
+    /* Make sure navigation is visible when toggled */
+    .nav.show {
+        display: flex !important;
+        position: fixed;
+        top: 73px;
+        right: 0;
+        width: 280px;
+        height: calc(100vh - 73px);
+        background-color: var(--white);
+        flex-direction: column;
+        padding: 2rem 0;
+        box-shadow: var(--shadow-xl);
+        overflow-y: auto;
+        z-index: 1000;
+    }
+
+    /* Dropdown container on mobile */
+    .dropdown {
+        width: 100%;
+        position: relative;
+    }
+
+    /* More link styling */
+    .dropdown > .nav-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        width: 100%;
+    }
+
+    /* Add arrow indicator */
+    .dropdown > .nav-link::after {
+        content: "▼";
+        font-size: 0.7rem;
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    /* Rotate arrow when dropdown is open */
+    .dropdown.show > .nav-link::after {
+        transform: rotate(180deg);
+    }
+
+    /* Dropdown content on mobile */
+    .dropdown-content {
+        position: static !important;
+        width: 100%;
+        background-color: var(--gray-50);
+        box-shadow: none;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        display: block !important;
+    }
+/**
+    /* Show dropdown content when active */
+    .dropdown.show .dropdown-content {
+        max-height: 500px;
+    }
+
+    /* Dropdown links styling */
+    .dropdown-content a {
+        padding: 0.75rem 2.5rem !important;
+        border-bottom: 1px solid var(--gray-200);
+        display: block;
+        background-color: transparent !important;
+    }
+
+    .dropdown-content a:hover {
+        background-color: var(--primary-100) !important;
+    }
+
+    /* Regular nav links */
+    .nav-link {
+        padding: 1rem 2rem;
+        width: 100%;
+        display: block;
+    }
 }
