@@ -477,3 +477,8 @@
         text-align: center;
     }
 }
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}

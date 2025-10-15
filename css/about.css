@@ -10,6 +10,7 @@
 .advisor-expertise,
 .member-role,
 .member-location,
+.member-quote,
 .timeline-date,
 .timeline-description,
 .achievement-org,
@@ -122,103 +123,146 @@
 }
 
 .company-story {
+  position: relative;
+  min-height: 80vh;
+  background: url("../assets/hq.PNG") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
   padding: 5rem 0;
-  background: var(--white);
+}
+
+.company-story::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.company-story > * {
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
 }
 
 .story-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
   align-items: center;
 }
 
-.story-text p {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: var(--gray-600);
-  margin-bottom: 1.5rem;
+.section-title {
+  font-size: 3rem;
+  font-weight: 300;
+  color: black;
+  letter-spacing: -1px;
 }
 
-.story-text p:last-child {
-  margin-bottom: 0;
+.section-title-our-story {
+  font-size: 3rem;
+  font-weight: 400;
+  color: white;
+  letter-spacing: -1px;
+}
+
+.story-content {
+  position: relative;
+  z-index: 2;
+}
+
+.story-text {
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.story-text p {
+  margin-bottom: 32px;
+  opacity: 0.9;
+  color: white;
 }
 
 .story-visual {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .story-image {
-  border-radius: var(--border-radius-xl);
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .story-image img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 4/3;
+  height: 280px;
   object-fit: cover;
 }
 
 .story-highlights {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  gap: 24px;
 }
 
 .highlight-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1.5rem;
-  background: var(--gray-50);
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--gray-200);
-  transition: var(--transition);
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: background 0.2s ease;
 }
 
 .highlight-item:hover {
-  background: var(--primary-50);
-  border-color: var(--primary-200);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .highlight-icon {
-  width: 3rem;
-  height: 3rem;
-  background: var(--primary-50);
-  border-radius: var(--border-radius);
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 16px;
+  background: white;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  margin-top: 10px;
-  transition: var(--transition);
-}
-
-.highlight-item:hover .highlight-icon {
-  background: var(--primary-100);
 }
 
 .highlight-icon svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: var(--primary-500);
+  width: 20px;
+  height: 20px;
+  color: #333;
 }
 
 .highlight-content h4 {
-  font-family: var(--font-primary);
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--gray-900);
-  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  text-align: start;
 }
 
 .highlight-content p {
-  font-size: 0.95rem;
-  color: var(--gray-600);
-  line-height: 1.5;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+  font-weight: 300;
+  text-align: start;
 }
 
 .mission-vision {
@@ -309,10 +353,21 @@
   background: var(--white);
 }
 
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--gray-600);
+  margin-top: 1rem;
+}
+
 .leadership-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
 }
 
 .leader-card {
@@ -326,7 +381,7 @@
 }
 
 .leader-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-7px);
   box-shadow: var(--shadow-xl);
 }
 
@@ -377,29 +432,29 @@
 }
 
 .leader-info {
-  padding: 2rem;
+  padding: 1.75rem;
 }
 
 .leader-name {
   font-family: var(--font-primary);
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   font-weight: 700;
   color: var(--gray-900);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.45rem;
 }
 
 .leader-title {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--primary-500);
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
 }
 
 .leader-bio {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--gray-600);
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.3rem;
 }
 
 .leader-social {
@@ -430,6 +485,7 @@
   height: 1.25rem;
 }
 
+/* Strategic Advisors Section - Smaller than Leadership */
 .advisors-section {
   padding: 5rem 0;
   background: var(--gray-50);
@@ -437,68 +493,72 @@
 
 .advisors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
 }
 
 .advisor-card {
   background: var(--white);
-  border-radius: var(--border-radius-lg);
-  padding: 2rem;
-  box-shadow: var(--shadow);
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
   border: 1px solid var(--gray-200);
   transition: var(--transition-slow);
-  text-align: center;
+  position: relative;
 }
 
 .advisor-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary-200);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
 }
 
 .advisor-image {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
+  position: relative;
+  aspect-ratio: 1;
   overflow: hidden;
-  margin: 0 auto 1.5rem;
-  border: 3px solid var(--primary-100);
 }
 
 .advisor-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  transition: var(--transition-slow);
+}
+
+.advisor-card:hover .advisor-image img {
+  transform: scale(1.05);
+}
+
+.advisor-info {
+  padding: 1.5rem;
 }
 
 .advisor-name {
   font-family: var(--font-primary);
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--gray-900);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .advisor-title {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--primary-500);
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .advisor-bio {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   color: var(--gray-600);
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
 }
 
 .advisor-expertise {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  justify-content: center;
 }
 
 .expertise-tag {
@@ -511,6 +571,7 @@
   border: 1px solid var(--primary-200);
 }
 
+/* Team Section - Smaller than Leadership */
 .team-section {
   padding: 5rem 0;
   background: var(--white);
@@ -518,57 +579,107 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
 }
 
 .team-member {
-  text-align: center;
-  transition: var(--transition);
+  background: var(--white);
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+  transition: var(--transition-slow);
+  position: relative;
 }
 
 .team-member:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
 }
 
 .member-image {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
+  position: relative;
+  aspect-ratio: 1;
   overflow: hidden;
-  margin: 0 auto 1rem;
-  border: 3px solid var(--gray-200);
-  transition: var(--transition);
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  border: none;
+  margin: 0;
+  background: linear-gradient(135deg, var(--white) 0%, var(--primary-500) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.team-member:hover .member-image {
-  border-color: var(--primary-200);
+.member-image::before {
+  content: "";
+  position: absolute;
+  top: 160%;
+  left: 200%;
+  transform: translate(-150%, -150%);
+  width: 130%;
+  height: 120%;
+  background-image: url("../assets/logo1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.33;
+  z-index: 1;
 }
 
 .member-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  transition: var(--transition-slow);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  position: relative;
+  z-index: 2;
+}
+
+.team-member:hover .member-image img {
+  transform: scale(1.05);
+}
+
+.member-info {
+  padding: 1.5rem;
+  text-align: left;
 }
 
 .member-name {
   font-family: var(--font-primary);
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--gray-900);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.4rem;
 }
 
 .member-role {
   font-size: 0.9rem;
   color: var(--primary-500);
-  font-weight: 500;
-  margin-bottom: 0.25rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
 }
 
 .member-location {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--gray-500);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.member-quote {
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--primary-600);
+  line-height: 1.5;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--gray-200);
 }
 
 .join-team-cta {
@@ -880,6 +991,7 @@
   border-color: var(--white);
 }
 
+/* Responsive Styles */
 @media (max-width: 1024px) {
   .about-hero-stats {
     grid-template-columns: repeat(2, 1fr);
@@ -891,8 +1003,10 @@
     gap: 3rem;
   }
 
-  .leadership-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  .leadership-grid,
+  .advisors-grid,
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -922,7 +1036,28 @@
     font-size: 1.5rem;
   }
 
-  .company-story,
+  .company-story {
+    min-height: 100vh;
+    padding: 60px 0;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .section-title,
+  .section-title-our-story {
+    font-size: 2.8rem;
+    margin-bottom: 32px;
+  }
+
+  .story-highlights {
+    flex-direction: column;
+    gap: 16px;
+  }
+
   .mission-vision,
   .leadership-team,
   .advisors-section,
@@ -937,14 +1072,10 @@
   .mission-vision-grid,
   .leadership-grid,
   .advisors-grid,
+  .team-grid,
   .achievements-grid,
   .values-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 
@@ -983,18 +1114,34 @@
     gap: 1rem;
   }
 
+  .section-title,
+  .section-title-our-story {
+    font-size: 2.2rem;
+  }
+
+  .story-text {
+    font-size: 1rem;
+  }
+
+  .highlight-item {
+    padding: 20px 16px;
+  }
+
   .mission-card,
   .vision-card,
   .values-card,
   .leader-card,
   .advisor-card,
+  .team-member,
   .achievement-card,
   .value-card {
-    padding: 1.5rem;
+    padding: 0;
   }
 
-  .team-grid {
-    grid-template-columns: 1fr;
+  .leader-info,
+  .advisor-info,
+  .member-info {
+    padding: 1.5rem;
   }
 
   .join-team-cta {
@@ -1006,181 +1153,23 @@
   }
 }
 
-.company-story {
-  position: relative;
-  min-height: 80vh;
-  background: url("../assets/hq.PNG") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.company-story::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8); /* black with 50% opacity */
-  z-index: 1;
-}
-
-.company-story > * {
-  position: relative;
-  z-index: 2; /* ensure content is above the overlay */
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  position: relative;
-  z-index: 2;
-}
-
-.story-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.section-title {
-  font-size: 3rem;
-  font-weight: 300;
-  color: black;
-  letter-spacing: -1px;
-}
-
-.section-title-our-story {
-  font-size: 3rem;
-  font-weight: 400;
-  color: white;
-  letter-spacing: -1px;
-}
-
-.story-text {
-  color: white;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  font-weight: 300;
-}
-
-.story-text p {
-  margin-bottom: 32px;
-  opacity: 0.9;
-  color: white;
-}
-
-.story-visual {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.story-image {
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.story-image img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-}
-
-.story-highlights {
-  display: flex;
-  gap: 24px;
-}
-
-.highlight-item {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 8px;
-  padding: 24px 20px;
-  text-align: center;
-  transition: background 0.2s ease;
-}
-
-.highlight-item:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.highlight-icon {
-  width: 40px;
-  height: 40px;
-  margin: 0 auto 16px;
-  background: white;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.highlight-icon svg {
-  width: 20px;
-  height: 20px;
-  color: #333;
-}
-
-.highlight-content h4 {
-  font-size: 1rem;
-  font-weight: 500;
-  color: white;
-  text-align: start;
-}
-
-.highlight-content p {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.4;
-  font-weight: 300;
-  text-align: start;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .company-story {
-    min-height: 100vh;
-    padding: 60px 0;
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-
-  .story-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    text-align: center;
-  }
-
-  .section-title {
-    font-size: 2.8rem;
-    margin-bottom: 32px;
-  }
-
-  .story-highlights {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .container {
-    padding: 0 20px;
+  100% {
+    opacity: 1;
   }
 }
 
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 2.2rem;
-  }
+.about-hero-title,
+.about-hero-subtitle,
+.hero-stat {
+  animation: fadeIn 1s ease-out forwards;
+}
 
-  .story-text {
-    font-size: 1rem;
-  }
-
-  .highlight-item {
-    padding: 20px 16px;
-  }
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
 }

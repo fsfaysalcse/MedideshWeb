@@ -602,3 +602,8 @@
         page-break-inside: avoid;
     }
 }
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}

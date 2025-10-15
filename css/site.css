@@ -1,4 +1,5 @@
 :root {
+  --primary: #2E8B57;
   --primary-50: #e8f5f0;
   --primary-100: #c6e7d0;
   --primary-200: #a0d7ad;
@@ -384,6 +385,17 @@ select {
   cursor: pointer;
   color: var(--gray-600);
   transition: var(--transition);
+}
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .theme-toggle:hover,
@@ -1995,4 +2007,91 @@ select {
 .lang-option.active {
   opacity: 1;
   text-decoration: underline;
+}
+
+
+
+@media (max-width: 768px) {
+    /* Make sure navigation is visible when toggled */
+    .nav.show {
+        display: flex !important;
+        position: fixed;
+        top: 73px;
+        right: 0;
+        width: 280px;
+        height: calc(100vh - 73px);
+        background-color: var(--white);
+        flex-direction: column;
+        padding: 2rem 0;
+        box-shadow: var(--shadow-xl);
+        overflow-y: auto;
+        z-index: 1000;
+    }
+
+    /* Dropdown container on mobile */
+    .dropdown {
+        width: 100%;
+        position: relative;
+    }
+
+    /* More link styling */
+    .dropdown > .nav-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        width: 100%;
+    }
+
+    /* Add arrow indicator */
+    .dropdown > .nav-link::after {
+        content: "▼";
+        font-size: 0.7rem;
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    /* Rotate arrow when dropdown is open */
+    .dropdown.show > .nav-link::after {
+        transform: rotate(180deg);
+    }
+
+    /* Dropdown content on mobile */
+    .dropdown-content {
+        position: static !important;
+        width: 100%;
+        background-color: var(--gray-50);
+        box-shadow: none;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        display: block !important;
+    }
+
+    /* Show dropdown content when active */
+    .dropdown.show .dropdown-content {
+        max-height: 500px;
+    }
+
+    /* Dropdown links styling */
+    .dropdown-content a {
+        padding: 0.75rem 2.5rem !important;
+        border-bottom: 1px solid var(--gray-200);
+        display: block;
+        background-color: transparent !important;
+    }
+
+    .dropdown-content a:hover {
+        background-color: var(--primary-100) !important;
+    }
+
+    /* Regular nav links */
+    .nav-link {
+        padding: 1rem 2rem;
+        width: 100%;
+        display: block;
+    }
 }

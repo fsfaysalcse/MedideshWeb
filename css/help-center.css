@@ -506,3 +506,8 @@
         font-size: 1.5rem;
     }
 }
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}

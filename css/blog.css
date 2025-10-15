@@ -521,3 +521,8 @@
         width: 100%;
     }
 }
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}

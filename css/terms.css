@@ -584,3 +584,7 @@
     border: 2px solid var(--gray-900);
   }
 }
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}

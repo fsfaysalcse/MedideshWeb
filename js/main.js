@@ -5,8 +5,16 @@ const on = (el, ev, fn) => el && el.addEventListener(ev, fn)
 ;(() => {
   const toggle = $('.menu-toggle'), nav = $('.nav')
   if (!toggle || !nav) return
-  const open = () => { nav.classList.add('show'); document.body.style.overflow = 'hidden' }
-  const close = () => { nav.classList.remove('show'); document.body.style.overflow = '' }
+  const open = () => { 
+    nav.classList.add('show')
+    toggle.classList.add('active')
+    document.body.style.overflow = 'hidden' 
+  }
+  const close = () => { 
+    nav.classList.remove('show')
+    toggle.classList.remove('active')
+    document.body.style.overflow = '' 
+  }
   on(toggle, 'click', () => nav.classList.contains('show') ? close() : open())
   on(nav, 'click', e => { if (e.target.closest('a')) close() })
   on(document, 'click', e => { if (!e.target.closest('.header') && nav.classList.contains('show')) close() })
@@ -128,12 +136,44 @@ const on = (el, ev, fn) => el && el.addEventListener(ev, fn)
   })
 })()
 
+// Mobile Dropdown Handler
 ;(() => {
-  const dropdownLink = document.querySelector('.nav-link + .dropdown > a');
-  if (dropdownLink) {
-    // Prevent navigation when the "More" link is clicked
-    dropdownLink.addEventListener('click', (e) => {
-      e.preventDefault();
-    });
-  }
+  const dropdowns = document.querySelectorAll('.dropdown');
+  
+  dropdowns.forEach(dropdown => {
+    const dropdownLink = dropdown.querySelector('.nav-link');
+    const dropdownContent = dropdown.querySelector('.dropdown-content');
+    
+    if (dropdownLink && dropdownContent) {
+      dropdownLink.addEventListener('click', function(e) {
+        // On mobile (width <= 768px), toggle dropdown instead of navigating
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Close other dropdowns
+          dropdowns.forEach(d => {
+            if (d !== dropdown) d.classList.remove('show');
+          });
+          
+          // Toggle current dropdown
+          dropdown.classList.toggle('show');
+        }
+      });
+    }
+  });
 })();
+
+window.onload = function () {
+  const heroTitle = document.querySelector('.about-hero-title');
+  const heroSubtitle = document.querySelector('.about-hero-subtitle');
+  const heroStats = document.querySelectorAll('.hero-stat');
+  
+  if (heroTitle) heroTitle.classList.add('fade-in');
+  if (heroSubtitle) heroSubtitle.classList.add('fade-in');
+  
+  heroStats.forEach((stat, index) => {
+    stat.style.animationDelay = `${0.3 + index * 0.3}s`;
+    stat.classList.add('fade-in');
+  });
+};

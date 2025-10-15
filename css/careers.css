@@ -399,3 +399,8 @@
         align-self: flex-start;
     }
 }
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}
