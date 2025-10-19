@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Setup Guide - MediDesh Learning Center</title>
+    <meta name="description" content="Learn how to set up your pharmacy from scratch with MediDesh. Complete step-by-step tutorial with video guide.">
+    <link rel="icon" href="../assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/site.css">
+    <link rel="stylesheet" href="../css/tutorial-details.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a class="brand" href="../index.html">
+                    <img src="../assets/logo1.png" alt="MediDesh logo" class="logo">
+                    <span class="brand-name">MediDesh</span>
+                </a>
+                <nav class="nav" id="navigation">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../index.html#features" class="nav-link">Features</a>
+                    <a href="../index.html#pricing" class="nav-link">Pricing</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <div class="dropdown">
+                        <a href="#" class="nav-link">More</a>
+                        <div class="dropdown-content">
+                            <a href="careers.html">Careers</a>
+                            <a href="blog.html">Blog</a>
+                            <a href="help-center.html">Help Center</a>
+                            <a href="documentation.html">Documentation</a>
+                            <a href="tutorials.html">Tutorials</a>
+                            <a href="system-status.html">System Status</a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="header-actions">
+                    <button class="lang-toggle" aria-label="Toggle language">
+                        <span class="lang-option active">EN</span>
+                        <span class="lang-option">বাংলা</span>
+                    </button>
+                    <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="tutorial-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                    <a href="tutorials.html">Tutorials</a>
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                    <span>Complete Setup Guide</span>
+                </div>
+                
+                <h1 class="tutorial-title">Complete Setup Guide: Getting Started with MediDesh</h1>
+                
+                <div class="tutorial-meta">
+                    <span class="meta-badge beginner">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        Beginner
+                    </span>
+                    <div class="meta-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                        </svg>
+                        12:45 minutes
+                    </div>
+                    <div class="meta-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                        8,234 views
+                    </div>
+                    <div class="meta-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                        Last updated: Oct 2025
+                    </div>
+                </div>
+                
+                <p class="tutorial-description">
+                    Learn how to set up your pharmacy from scratch, configure essential settings, and process your first sale. This comprehensive guide will walk you through every step needed to get MediDesh running smoothly in your pharmacy.
+                </p>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <div class="container">
+                <div class="video-wrapper">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/JYVMuWGCtK4?si=zm918EOQOAGV8uzv" title="Complete Setup Guide" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-heading">Tutorial Steps</h2>
+                        
+                        <div class="step-container">
+                            <div class="step-header">
+                                <div class="step-number">1</div>
+                                <div class="step-title-wrapper">
+                                    <h3 class="step-title">Download and Install MediDesh</h3>
+                                </div>
+                            </div>
+                            <div class="step-content">
+                                <p class="step-description">
+                                    Get started by downloading MediDesh for your preferred platform. We support Windows, macOS, Linux, Android, and iOS devices. Choose the version that matches your operating system and hardware requirements.
+                                </p>
+                                
+                                <div class="platform-icons">
+                                    <div class="platform-icon" title="Windows">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M3 5.45l7.5-1.05v7.28H3V5.45M10.5 4.28L21 2.85v8.83h-10.5V4.28M3 12.68h7.5v7.28L3 18.91v-6.23M10.5 19.9V12.68H21v8.77l-10.5-1.55z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="platform-icon" title="macOS">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="platform-icon" title="Linux">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M14.62 8.35c-.42.28-1.15 1.18-1.95 1.18-.32 0-.62-.09-.87-.24.07-.5.14-.96.14-1.4 0-.17-.04-.38-.04-.55.42-.28 1.15-1.18 1.95-1.18.32 0 .62.09.87.24-.07.5-.14.96-.14 1.4 0 .17.04.38.04.55M16.22 8.6c-.28.07-.54.15-.78.26-.07-.29-.14-.59-.14-.86 0-.17 0-.36.04-.55.28-.07.54-.15.78-.26.07.29.14.59.14.86 0 .17 0 .36-.04.55m-.95 3.5c-.85.21-1.61.32-2.27.32-.67 0-1.43-.11-2.27-.32-.31-.84-.5-1.73-.5-2.64 0-.33.04-.68.07-1.03.46.18.97.28 1.48.28 1.36 0 2.63-.85 3.34-2.14.03.14.07.28.07.42 0 .91-.18 1.8-.5 2.64-.42.85-.82 1.73-.42 2.47M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="platform-icon" title="Android">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M16.61 15.15c-.46 0-.84.38-.84.84s.38.84.84.84.84-.38.84-.84-.38-.84-.84-.84M7.39 15.15c-.46 0-.84.38-.84.84s.38.84.84.84.84-.38.84-.84-.38-.84-.84-.84M7.62 3.18l1.06-1.83c.06-.11.02-.25-.09-.31-.11-.07-.25-.02-.31.09l-1.07 1.85c-.78-.33-1.64-.52-2.55-.52-.91 0-1.77.19-2.55.52L1.04 1.13C.98 1.02.84.97.73 1.04c-.11.06-.16.2-.09.31l1.06 1.83C1.6 4.18.85 5.46.54 6.87h14.92c-.31-1.41-1.06-2.69-2.16-3.69h-.68M6.55 6.11H5.11V4.67h1.44v1.44m5.89 0H11V4.67h1.44v1.44M.54 7.37v7.67c0 .66.54 1.2 1.2 1.2h1.25v4.51c0 .82.67 1.49 1.49 1.49.82 0 1.49-.67 1.49-1.49v-4.51h3.09v4.51c0 .82.67 1.49 1.49 1.49.82 0 1.49-.67 1.49-1.49v-4.51h1.25c.66 0 1.2-.54 1.2-1.2V7.37H.54z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="platform-icon" title="iOS">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="info-box">
+                                    <div class="info-box-header">
+                                        <svg class="info-box-icon" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                                        </svg>
+                                        <span class="info-box-title">System Requirements</span>
+                                    </div>
+                                    <div class="info-box-content">
+                                        Minimum 4GB RAM, 2GB free disk space, and a stable internet connection. For optimal performance, we recommend 8GB RAM and an SSD drive.
+                                    </div>
+                                </div>
+                                
+                                <ul class="feature-list">
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Quick Installation</div>
+                                            <div class="feature-desc">Setup wizard guides you through the entire process in under 5 minutes</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Automatic Updates</div>
+                                            <div class="feature-desc">Get the latest features and security patches automatically</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Offline Mode</div>
+                                            <div class="feature-desc">Continue working even without internet connection</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step-container">
+                            <div class="step-header">
+                                <div class="step-number">2</div>
+                                <div class="step-title-wrapper">
+                                    <h3 class="step-title">Create Your Account</h3>
+                                </div>
+                            </div>
+                            <div class="step-content">
+                                <p class="step-description">
+                                    Register your pharmacy by providing basic information including pharmacy name, license number, and contact details. This information will be used for invoices, reports, and regulatory compliance.
+                                </p>
+                                
+                                <ul class="feature-list">
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Pharmacy Information</div>
+                                            <div class="feature-desc">Name, address, license number, and tax registration details</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Owner Details</div>
+                                            <div class="feature-desc">Name, email, phone number, and emergency contact</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Security Settings</div>
+                                            <div class="feature-desc">Create a strong password and enable two-factor authentication</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step-container">
+                            <div class="step-header">
+                                <div class="step-number">3</div>
+                                <div class="step-title-wrapper">
+                                    <h3 class="step-title">Configure System Settings</h3>
+                                </div>
+                            </div>
+                            <div class="step-content">
+                                <p class="step-description">
+                                    Set up essential system preferences including currency, tax rates, receipt formats, and business hours. These settings ensure MediDesh works perfectly for your specific needs.
+                                </p>
+                                
+                                <ul class="feature-list">
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Currency & Tax</div>
+                                            <div class="feature-desc">Set your local currency and configure VAT/GST rates</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Receipt Customization</div>
+                                            <div class="feature-desc">Add your logo, customize layout, and set default messages</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Business Hours</div>
+                                            <div class="feature-desc">Define opening hours and set up holiday schedules</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                
+                                <div class="info-box">
+                                    <div class="info-box-header">
+                                        <svg class="info-box-icon" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/>
+                                        </svg>
+                                        <span class="info-box-title">Pro Tip</span>
+                                    </div>
+                                    <div class="info-box-content">
+                                        You can always change these settings later from the Settings menu. We recommend configuring everything during initial setup to avoid issues later.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-container">
+                            <div class="step-header">
+                                <div class="step-number">4</div>
+                                <div class="step-title-wrapper">
+                                    <h3 class="step-title">Add Your First Products</h3>
+                                </div>
+                            </div>
+                            <div class="step-content">
+                                <p class="step-description">
+                                    Start building your inventory by adding medicines and products. You can add items individually or import them in bulk using our CSV template. Each product requires basic information like name, price, and stock quantity.
+                                </p>
+                                
+                                <ul class="feature-list">
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Product Information</div>
+                                            <div class="feature-desc">Name, generic name, manufacturer, and category</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Pricing & Stock</div>
+                                            <div class="feature-desc">Purchase price, selling price, and current stock levels</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Expiry Tracking</div>
+                                            <div class="feature-desc">Batch numbers and expiration dates for safety compliance</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step-container">
+                            <div class="step-header">
+                                <div class="step-number">5</div>
+                                <div class="step-title-wrapper">
+                                    <h3 class="step-title">Connect Hardware Devices</h3>
+                                </div>
+                            </div>
+                            <div class="step-content">
+                                <p class="step-description">
+                                    Connect your barcode scanner, receipt printer, and cash drawer to streamline your workflow. MediDesh supports most standard USB and Bluetooth devices without requiring additional drivers.
+                                </p>
+                                
+                                <ul class="feature-list">
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M4 4h6v6H4V4zm10 0v6h6V4h-6zM4 14h6v6H4v-6zm10 3h6v3h-6v-3zM4 11h16v2H4v-2z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Barcode Scanner</div>
+                                            <div class="feature-desc">USB or Bluetooth scanners for quick product lookup</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Receipt Printer</div>
+                                            <div class="feature-desc">Thermal or inkjet printers for professional receipts</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Cash Drawer</div>
+                                            <div class="feature-desc">Automatic opening with secure cash management</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step-container">
+                            <div class="step-header">
+                                <div class="step-number">6</div>
+                                <div class="step-title-wrapper">
+                                    <h3 class="step-title">Process Your First Sale</h3>
+                                </div>
+                            </div>
+                            <div class="step-content">
+                                <p class="step-description">
+                                    You're ready to make your first sale! Use the POS interface to scan or search for products, adjust quantities, apply discounts, and process payments. The system will automatically update inventory and generate a receipt.
+                                </p>
+                                
+                                <ul class="feature-list">
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M7 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM1 2v2h2l3.6 7.59-1.36 2.45c-.16.28-.24.61-.24.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.42 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Add Products to Cart</div>
+                                            <div class="feature-desc">Scan barcodes or search by name to add items</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Apply Discounts</div>
+                                            <div class="feature-desc">Percentage or fixed amount discounts per item or total</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="feature-icon">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="feature-text">
+                                            <div class="feature-title">Accept Payment</div>
+                                            <div class="feature-desc">Cash, card, mobile payment, or split payment options</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                
+                                <div class="info-box">
+                                    <div class="info-box-header">
+                                        <svg class="info-box-icon" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2l-5.5 9h11z M12 22l5.5-9h-11z"/>
+                                        </svg>
+                                        <span class="info-box-title">Congratulations!</span>
+                                    </div>
+                                    <div class="info-box-content">
+                                        You've completed the basic setup! Your pharmacy is now ready to handle sales. Explore advanced features like customer management, supplier tracking, and detailed reports from the main dashboard.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="sidebar">
+                        <div class="sidebar-card">
+                            <h3 class="sidebar-title">Table of Contents</h3>
+                            <ul class="toc-list">
+                                <li class="toc-item">
+                                    <a href="#step-1" class="toc-link active">1. Download and Install</a>
+                                </li>
+                                <li class="toc-item">
+                                    <a href="#step-2" class="toc-link">2. Create Account</a>
+                                </li>
+                                <li class="toc-item">
+                                    <a href="#step-3" class="toc-link">3. Configure Settings</a>
+                                </li>
+                                <li class="toc-item">
+                                    <a href="#step-4" class="toc-link">4. Add Products</a>
+                                </li>
+                                <li class="toc-item">
+                                    <a href="#step-5" class="toc-link">5. Connect Hardware</a>
+                                </li>
+                                <li class="toc-item">
+                                    <a href="#step-6" class="toc-link">6. First Sale</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3 class="sidebar-title">Related Tutorials</h3>
+                            <ul class="related-tutorials">
+                                <li class="related-item">
+                                    <div class="related-thumb">
+                                        <img src="../assets/tutorials_placeholder.png" alt="Tutorial thumbnail">
+                                    </div>
+                                    <div class="related-info">
+                                        <h4>Adding Products to Inventory</h4>
+                                        <div class="related-meta">8:15 • Beginner</div>
+                                    </div>
+                                </li>
+                                <li class="related-item">
+                                    <div class="related-thumb">
+                                        <img src="../assets/tutorials_placeholder.png" alt="Tutorial thumbnail">
+                                    </div>
+                                    <div class="related-info">
+                                        <h4>Barcode Scanner Setup</h4>
+                                        <div class="related-meta">7:20 • Beginner</div>
+                                    </div>
+                                </li>
+                                <li class="related-item">
+                                    <div class="related-thumb">
+                                        <img src="../assets/tutorials_placeholder.png" alt="Tutorial thumbnail">
+                                    </div>
+                                    <div class="related-info">
+                                        <h4>Processing Your First Sale</h4>
+                                        <div class="related-meta">5:30 • Beginner</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-card cta-card">
+                            <h3 class="sidebar-title">Need Help?</h3>
+                            <p>Our support team is ready to assist you with setup and configuration.</p>
+                            <a href="contact.html" class="btn btn-white">Contact Support</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Pharmacy?</h2>
+                    <p>Start your free trial today and see how MediDesh can streamline your operations</p>
+                    <a href="../index.html#pricing" class="btn btn-primary btn-large">Start Free Trial</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a class="brand" href="../index.html">
+                        <img src="../assets/logo1.png" alt="Medidesh logo" class="logo">
+                        <span class="brand-name">Medidesh</span>
+                    </a>
+                    <p class="footer-description">Smart POS & inventory solutions for modern Bangladeshi pharmacies.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column"></div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Company</h4>
+                        <ul class="footer-list">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Support</h4>
+                        <ul class="footer-list">
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="tutorials.html">Tutorials</a></li>
+                            <li><a href="status.html">System Status</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Legal</h4>
+                        <ul class="footer-list">
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="security.html">Security</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="footer-copyright">© 2024 Medidesh. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="privacy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
+                        <a href="cookies.html">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/tutorial-details.js"></script>
+</body>
+</html>
