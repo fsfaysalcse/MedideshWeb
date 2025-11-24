@@ -123,10 +123,11 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    document.querySelectorAll('.card-link, .btn-read-more').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('In production, this would navigate to the full article page.');
-        });
+document.querySelectorAll('.card-link, .btn-read-more, .featured-article').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (this.tagName !== 'A') {
+            window.location.href = 'blog-details.html';
+        }
     });
+});
 });

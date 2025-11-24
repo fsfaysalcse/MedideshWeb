@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const playButtons = document.querySelectorAll('[data-video]');
     const pathButtons = document.querySelectorAll('.btn-start-path');
 
+    // Category Filtering
     categoryTabs.forEach(tab => {
         tab.addEventListener('click', function() {
             const category = this.dataset.category;
@@ -35,32 +36,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // "Play" buttons on thumbnails - Redirect to details
     playButtons.forEach(button => {
         button.addEventListener('click', function(e) {
-            e.preventDefault();
-            const videoId = this.dataset.video;
-            playVideo(videoId);
+            e.stopPropagation(); // Stop bubbling so card click doesn't fire twice
+            window.location.href = 'tutorial-details.html';
         });
     });
 
-    function playVideo(videoId) {
-        const videoTitle = videoId === 'featured' 
-            ? 'Complete Setup Guide: Getting Started with MediDesh'
-            : 'Tutorial Video';
-        
-        alert(`Video player would open here for: "${videoTitle}"\n\nIn production, this would:\n- Open a video player modal\n- Play the tutorial video\n- Track viewing progress\n- Allow fullscreen playback\n- Remember where you left off`);
-    }
-
+    // "Start Learning" Path buttons
     pathButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            const pathCard = this.closest('.path-card');
-            const pathTitle = pathCard.querySelector('h3').textContent;
-            
-            alert(`Starting learning path: "${pathTitle}"\n\nIn production, this would:\n- Navigate to the learning path page\n- Show all videos in sequence\n- Track your progress\n- Award certificates upon completion`);
+            // For now, all paths lead to the details page example
+            window.location.href = 'tutorial-details.html';
         });
     });
 
+    // Scroll Animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -82,52 +75,17 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    const tutorialCardElements = document.querySelectorAll('.tutorial-card');
-    tutorialCardElements.forEach(card => {
+    // Card Click Handler (Backup if HTML onclick misses)
+    tutorialCards.forEach(card => {
         card.addEventListener('click', function(e) {
-            if (!e.target.closest('.play-btn-small')) {
-                const title = this.querySelector('h3').textContent;
-                const level = this.querySelector('.tutorial-level').textContent;
-                
-                alert(`Opening tutorial: "${title}"\nLevel: ${level}\n\nIn production, this would open the full tutorial page.`);
+            // If the click wasn't on a button (buttons handle their own logic)
+            if (!e.target.closest('button')) {
+                window.location.href = 'tutorial-details.html';
             }
         });
     });
 
-    function simulateProgress(pathCard) {
-        const progressFill = pathCard.querySelector('.progress-fill');
-        const progressText = pathCard.querySelector('.progress-text');
-        const totalVideos = parseInt(progressText.textContent.match(/\d+$/)[0]);
-        let completed = 0;
-        
-        const interval = setInterval(() => {
-            completed++;
-            const percentage = (completed / totalVideos) * 100;
-            progressFill.style.width = percentage + '%';
-            progressText.textContent = `${completed} of ${totalVideos} completed`;
-            
-            if (completed >= totalVideos) {
-                clearInterval(interval);
-                setTimeout(() => {
-                    alert('Congratulations! You completed this learning path! 🎉');
-                }, 500);
-            }
-        }, 1000);
-    }
-
-    const videoContainers = document.querySelectorAll('.video-container');
-    videoContainers.forEach(container => {
-        const img = container.querySelector('img');
-        if (img) {
-            img.addEventListener('click', function() {
-                const playBtn = container.querySelector('[data-video]');
-                if (playBtn) {
-                    playBtn.click();
-                }
-            });
-        }
-    });
-
+    // Staggered animation delay for grid items
     tutorialCards.forEach((card, index) => {
         card.style.transitionDelay = `${index * 0.05}s`;
     });

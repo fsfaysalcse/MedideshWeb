@@ -2084,3 +2084,40 @@ select {
         display: block;
     }
 }
+
+
+/* --- Footer Responsive Centering Fix --- */
+@media (max-width: 1024px) {
+    .footer-content {
+        text-align: center;
+    }
+
+    .footer-brand {
+        display: flexbox;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-description {
+          margin: auto;
+    }
+
+    .footer-social {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .footer-links {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-brand .brand {
+        justify-content: center;
+    }
+    
+    .footer-links {
+        gap: 2rem;
+    }
+}
